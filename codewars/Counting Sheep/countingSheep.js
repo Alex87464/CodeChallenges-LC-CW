@@ -3,6 +3,7 @@
 
 
 // Descomentar la linea de abajo para que pueda tomar un array la funcion 
+
 // const arrayOfSheep = [true,  true,  true,  false, true,  true,  true,  true , true,  false, true,  false, true, false, false, true , true,  true,  true,  true , false, false, true,  true];
 
 function countSheeps(arrayOfSheep) {
@@ -27,3 +28,14 @@ function countSheeps(arrayOfSheep) {
 
 // Descomentar esta linea para ver en consola el resultado
 // console.log(countSheeps(arrayOfSheep));
+
+
+
+/*
+Solución con mejores practicas y más sencilla de usar:
+
+function countSheeps(arrayOfSheeps) {
+  return arrayOfSheeps.filter(Boolean).length;
+}
+
+*/
