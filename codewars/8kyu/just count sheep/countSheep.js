@@ -1,3 +1,6 @@
+// If you can't sleep, just count sheep!!
+// https://www.codewars.com/kata/5b077ebdaf15be5c7f000077
+
 var countSheep = function (num){
 
     let i = 1;
@@ -8,6 +11,4 @@ var countSheep = function (num){
     }
     console.log(result);
     return result;
-}  
-
-countSheep(2);
+}
