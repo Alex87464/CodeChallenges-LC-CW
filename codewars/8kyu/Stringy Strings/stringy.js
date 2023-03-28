@@ -12,7 +12,6 @@ function stringy(size) {
 
     while(counter1 < size){
         counter1++;
-
         counter2 = (counter2+1)%2;
         console.log(`Contador 1: ${counter1}, Contador 2: ${counter2}`);
         arr.push(counter2);
@@ -21,9 +20,6 @@ function stringy(size) {
     console.log(arr.join(''))
     return(arr.join(''));
 
-
-
 }
-
 
 stringy(size);
