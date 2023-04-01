@@ -3,7 +3,7 @@
 
 function updateLight(current) {
 
-    return current === 'green' ? 'yellow' : current === 'yellow' ? 'red' : current === 'red' ? 'green': '';
+    return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green';
 
 }
 
