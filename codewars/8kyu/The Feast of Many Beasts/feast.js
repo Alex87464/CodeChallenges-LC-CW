@@ -3,8 +3,12 @@
 
 function feast(beast, dish) {
 
+    let arr = beast.split('');
+    let arr2 = dish.split('');
+
+    return arr[0] === arr2[0] && arr[arr.length-1] === arr2[arr2.length-1] ? true : false;
 
 
 }
 
-feast("chickadee", "chocolate cake"); // Output -> true
+feast("great blue heron", "garlic naan"); // Output -> true
