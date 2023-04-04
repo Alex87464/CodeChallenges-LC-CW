@@ -3,9 +3,11 @@
 
 function doubleChar(str){
 
-    
+    return str.split('').map((element) => element + element).join('').concat('');
 
 }
 
+// Solucion con arrow
+// const doubleChar = (str) => str.split('').map((element) => element + element).join('').concat('');
 
 doubleChar('Hola mundo') // Output -> 'HHoollaa  mmuunnddoo'
