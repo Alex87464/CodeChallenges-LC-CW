@@ -3,15 +3,15 @@
 
 function removeSmallest(numbers) {
     // si el array esta vacio lo retorno
-    if(arr.length === 0) {
-        return arr;
+    if(numbers.length === 0) {
+        return numbers;
     }
 
     // minIndex toma el indice o posicion del numero mas chico
-    const minIndex = arr.indexOf(Math.min(...ar));
+    const minIndex = numbers.indexOf(Math.min(...numbers));
 
     // elimino el valor mas chico usando el metodo slice y concateno el siguiente numero al valor minimo
-    const result = arr.slice(0, minIndex).concat(arr.slice(minIndex) + 1);
+    const result = numbers.slice(0, minIndex).concat(numbers.slice(minIndex + 1));
 
     return result;
 }
