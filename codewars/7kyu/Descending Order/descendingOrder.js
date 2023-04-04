@@ -4,6 +4,11 @@
 
 function descendingOrder(n){
 
+    const arr = Array.from(String(n), Number);
+    const result = parseInt(arr.sort((a,b)=>b-a).join(''), 10);
+    console.log(result)
+    return result;
+    
 }
 
-descendingOrder(145263); // Output -> 654321
+descendingOrder(1234569); // Output -> 987654321
