@@ -15,7 +15,7 @@ function getSum(a, b){
     let arr = Array.from({ length: end - start + 1 }, (_, i) => start + i);
     
     const initialValue = 0;
-    arr = arr.reduce((acumulator, currentValue) => acumulator + currentValue, initialValue)
+    arr = arr.reduce((acumulator, currentValue) => acumulator + currentValue, initialValue);
 
     return arr;
   }
