@@ -25,6 +25,9 @@ For n = 1234, the output should be 120.
 
 1+2+3+4=10 and 1*2*3*4=24, LCM(10,24)=120
 
+Useful link:
+https://www.geeksforgeeks.org/javascript-program-to-find-lcm-of-two-numbers/
+
 */
 
 function parameter(n) {
