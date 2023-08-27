@@ -18,9 +18,20 @@ Examples (input --> output):
 */
 
 function maskify(cc) {
+  if (cc.length < 4) return cc;
 
+  const ccToArr = cc.split("");
+  let hiddenNumbers = [];
 
+  for (let i = 0; i < ccToArr.length - 4; i++) {
+    hiddenNumbers.push("#");
+  }
 
+  const lastFourDigits = ccToArr.slice(-4).join("");
+
+  console.log(hiddenNumbers.join("") + lastFourDigits);
+  return hiddenNumbers.join("") + lastFourDigits;
 }
 
-maskify('4556364607935616'); // Expected output -> ############5616
+// maskify('11111'); // Expected output -> #1111
+maskify("12345"); // Expected output -> #2345
