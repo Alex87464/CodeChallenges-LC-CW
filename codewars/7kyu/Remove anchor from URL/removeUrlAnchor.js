@@ -12,7 +12,8 @@ Examples
 
 function removeUrlAnchor(url){
     // TODO: complete
-    
+    console.log(url.split('#')[0])
+    return url.split('#')[0]
 }
 
 removeUrlAnchor('www.codewars.com#about') // Expected -> 'www.codewars.com'
