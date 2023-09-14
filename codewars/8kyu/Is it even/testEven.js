@@ -4,6 +4,10 @@
 
 function testEven(n) {
 
+    return n % 2 === 0 ? true : false;
+
+    // Shorter solution
+    return n % 2 === 0;
 }
 
 testEven(0) // Expected output: true
