@@ -15,5 +15,24 @@
 
 
 function createPhoneNumber(numbers){
-  
+
+    let phoneNumber = "("; // This is the first part of the phone number
+    for(let i = 0; i < numbers.length; i++) { // Loop through the numbers array
+        if(i === 3) { // If i is 3, then add a closing parenthesis
+        phoneNumber += ") ";
+        } else if(i === 6) { // If i is 6, then add a dash
+        phoneNumber += "-";
+        }
+        phoneNumber += numbers[i]; // Add the current number to the phone number
+    }
+    return phoneNumber; // Return the phone number
 }
+
+// Best Practice
+// function createPhoneNumber(numbers){
+//     numbers = numbers.join('');
+//     return '(' + numbers.substring(0, 3) + ') '
+//         + numbers.substring(3, 6)
+//         + '-'
+//         + numbers.substring(6);
+// }
