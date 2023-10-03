@@ -23,13 +23,6 @@ function high(x){
       console.log(wordValue);
       return wordValue;
     
-
-
-
-
-
-    
-
 }
 
-high('abad'); // Output 'abad'-> 8 (1+2+1+4)
+high('abadd'); // Output 'abad'-> 8 (1+2+1+4)
