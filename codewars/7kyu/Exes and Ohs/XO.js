@@ -33,5 +33,13 @@ function XO(str) {
 
 XO('ooxXm'); // Expected output -> true
 
+
+// Another solution
+/*
+function XO(str) {
+    return str.toLowerCase().split('x').length === str.toLowerCase().split('o').length;
+}
+*/
+
 // Resource to understand 'for of' loop:
 // https://www.w3schools.com/js/js_loop_forof.asp
