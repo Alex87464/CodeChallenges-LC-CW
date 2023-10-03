@@ -16,7 +16,22 @@ The string can contain any char.
 
 function XO(str) {
     //code here
-    
+    let xCounter = 0;
+    let oCounter = 0;
+
+    for( let x of str.toLowerCase() ) {
+        if(x === 'x'){
+            xCounter++;
+        }
+        if(x === 'o'){
+            oCounter++;
+        }
+    }
+
+    return  xCounter == oCounter;
 }
 
-XO('xxOo'); // Expected output -> true
+XO('ooxXm'); // Expected output -> true
+
+// Resource to understand 'for of' loop:
+// https://www.w3schools.com/js/js_loop_forof.asp
