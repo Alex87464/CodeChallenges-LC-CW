@@ -11,10 +11,11 @@ integers and strings and returns a new list with the strings filtered out.
 * filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
 
-const list = [1,2, 'a', 'b'];
+const list = [1, 2, "a", "b"];
+
 function filter_list(l) {
   // Return a new array with the strings filtered out
-  
+  return l.filter((element) => typeof element === "number");
 }
 
-filter_list(list) // Expected output -> [1,2]
+filter_list(list); // Expected output -> [1,2]
