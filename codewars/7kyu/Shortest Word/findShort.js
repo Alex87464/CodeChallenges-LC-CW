@@ -24,5 +24,10 @@ function findShort(string){
     return minLength;
 }
 
+// Solución alternativa con mejores prácticas
+// function findShort(s){
+//     return Math.min(...s.split(" ").map (s => s.length));
+// }
+
 
 findShort("bitcoin take over the world maybe who knows perhaps"); // Expected output -> 3
