@@ -28,4 +28,10 @@ function flattenAndSort(array) {
   return result.sort((a, b) => a - b);
 }
 
+/* Shortest solution 
+function flattenAndSort(array) {
+  return [].concat(...array).sort((a,b) => a - b);
+}
+*/
+
 flattenAndSort([[1, 3, 5], [100], [2, 4, 6]]); // Expected output -> [1, 2, 3, 4, 5, 6, 100]
