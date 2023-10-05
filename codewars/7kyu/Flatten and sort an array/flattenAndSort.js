@@ -16,8 +16,16 @@ http://stackoverflow.com/questions/6093874/why-doesnt-the-sort-function-of-javas
 */
 
 function flattenAndSort(array) {
-    // Good luck, brave code warrior!
-    return array;
+  const result = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const arreglo = array[i];
+    for (let j = 0; j < arreglo.length; j++) {
+      result.push(arreglo[j]);
+    }
+  }
+
+  return result.sort((a, b) => a - b);
 }
 
-flattenAndSort([ [1, 3, 5], [100], [2, 4, 6] ]) // Expected output -> [1, 2, 3, 4, 5, 6, 100]
+flattenAndSort([[1, 3, 5], [100], [2, 4, 6]]); // Expected output -> [1, 2, 3, 4, 5, 6, 100]
