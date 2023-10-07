@@ -20,7 +20,7 @@ Error checking for text strings or other invalid inputs is not required, only va
 
 function narcissistic(num) {
     
-    const digits = String(num).split('').map(Number)
+    const digits = String(num).split('').map(Number);
 
     const sumOfPowers = digits.reduce((sum, digit) => {
         return sum + Math.pow(digit, digits.length);
@@ -29,4 +29,4 @@ function narcissistic(num) {
     return sumOfPowers === num;
 }
 
-narcissistic(153); // Expected output -> 
+narcissistic(153); // Expected output -> true | 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
