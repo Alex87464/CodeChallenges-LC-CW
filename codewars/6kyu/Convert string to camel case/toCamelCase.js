@@ -10,8 +10,13 @@ Examples
 "The_Stealth-Warrior" gets converted to "TheStealthWarrior"
 */
 
-function toCamelCase(str){
+function toCamelCase(str) {
+  var newString = str.replace(/[_-]./g, function (match) {
+    // Convierte la segunda letra (la letra después del guión) en mayúscula
+    return match.charAt(0) + match.charAt(1).toUpperCase();
+  });
 
+  return newString.replace(/[_-]/g, "");
 }
-
-toCamelCase('the-stealth-warrior'); // Expected output -> 'theStealthWarrior'
+toCamelCase("the_stealth_warrior");
+// toCamelCase("the-stealth-warrior"); // Expected output -> 'theStealthWarrior'
