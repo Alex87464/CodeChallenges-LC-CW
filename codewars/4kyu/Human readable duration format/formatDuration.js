@@ -24,38 +24,57 @@ A unit of time must be used "as much as possible". It means that the function sh
 
 */
 
-
 function formatDuration(seconds) {
-    if (seconds === 0) {
-        return "now";
+  if (seconds === 0) {
+    return "now";
+  }
+
+  const timeUnits = {
+    year: 31536000,
+    day: 86400,
+    hour: 3600,
+    minute: 60,
+    second: 1,
+  };
+
+  const timeComponents = [];
+
+  for (const [unit, duration] of Object.entries(timeUnits)) {
+    const unitCount = Math.floor(seconds / duration);
+    if (unitCount > 0) {
+      seconds %= duration;
+      timeComponents.push(`${unitCount} ${unit}${unitCount > 1 ? "s" : ""}`);
     }
+  }
 
-    const timeUnits = {
-        year: 31536000,
-        day: 86400,
-        hour: 3600,
-        minute: 60,
-        second: 1
-    };
+  if (timeComponents.length === 1) {
+    return timeComponents[0];
+  } else if (timeComponents.length === 2) {
+    return timeComponents.join(" and ");
+  } else {
+    const lastComponent = timeComponents.pop();
+    return timeComponents.join(", ") + ` and ${lastComponent}`;
+  }
+}
 
-    const timeComponents = [];
+// Alternative Solution using an object
+function alternativeFormatDuration(seconds) {
+  var time = { year: 31536000, day: 86400, hour: 3600, minute: 60, second: 1 },
+    res = [];
 
-    for (const [unit, duration] of Object.entries(timeUnits)) {
-        const unitCount = Math.floor(seconds / duration);
-        if (unitCount > 0) {
-            seconds %= duration;
-            timeComponents.push(`${unitCount} ${unit}${unitCount > 1 ? 's' : ''}`);
-        }
+  if (seconds === 0) return "now";
+
+  for (var key in time) {
+    if (seconds >= time[key]) {
+      var val = Math.floor(seconds / time[key]);
+      res.push((val += val > 1 ? " " + key + "s" : " " + key));
+      seconds = seconds % time[key];
     }
+  }
 
-    if (timeComponents.length === 1) {
-        return timeComponents[0];
-    } else if (timeComponents.length === 2) {
-        return timeComponents.join(' and ');
-    } else {
-        const lastComponent = timeComponents.pop();
-        return timeComponents.join(', ') + ` and ${lastComponent}`;
-    }
+  return res.length > 1
+    ? res.join(", ").replace(/,([^,]*)$/, " and" + "$1")
+    : res[0];
 }
 
 formatDuration(3662); // Expected output -> "1 hour, 1 minute and 2 seconds"
