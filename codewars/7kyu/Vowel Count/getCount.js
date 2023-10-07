@@ -27,8 +27,18 @@ function getCount(str) {
     // por último retorno la suma de los valores de cada vocal
     return cuenta['a']+cuenta['e']+cuenta['i']+cuenta['o']+cuenta['u'];
 
-
-
 }
 
-getCount(str); // Output -> 5
+function AlternativeGetCount(str){
+    const vowel = 'aeiou';
+    let counter = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if(vowel.includes(str[i])) counter++;
+    }
+    
+    return counter;
+}
+
+// getCount(str); // Output -> 5
+AlternativeGetCount(str);
