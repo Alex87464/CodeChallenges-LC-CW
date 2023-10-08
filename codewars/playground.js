@@ -14,11 +14,10 @@
 //     //   }
 //     // }
 
-
 //     // console.log(string)
 //     // for (let i = 0; i < string.length; i++) {
 
-//     //     if(string[i] == 'T'){ 
+// if(string[i] == 'T'){
 //     //         string[i] = 'U'
 //     //     }
 //     // }
