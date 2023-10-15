@@ -20,7 +20,6 @@ class Node {
 
 
 // Paso 2: Crear la LinkedList:
-
 class LinkedList {
 
     constructor(){
