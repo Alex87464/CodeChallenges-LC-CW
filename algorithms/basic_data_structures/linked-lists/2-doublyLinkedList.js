@@ -2,7 +2,7 @@
 * Estructura de un nodo en una lista enlazada doble
 - data: Almacena el valor del nodo
 - next: Una referencia al nodo siguiente
-- pev: Una referencia al nodo anterior 
+- prev: Una referencia al nodo anterior 
 */
 
 // ? Ejemplo de una clase Node para una lista enlazada doble:
