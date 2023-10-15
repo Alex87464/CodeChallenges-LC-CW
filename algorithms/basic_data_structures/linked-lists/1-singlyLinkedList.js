@@ -61,11 +61,72 @@ class LinkedList {
         // Return corta la ejecución del método
         return;
     }
+
+    // Método size para retornar la cantidad total de nodos en la lista enlazada
+    size() {
+        let counter = 0;
+        let current = this.head;
+        while (current) {
+            counter++;
+            current = current.next;
+        }
+        console.log(`La cantidad de nodos es ${counter}`)
+        return counter;
+    }
+
+    find(data) {
+        let current = this.head;
+        while(current) {
+            if (current.data === data) {
+                console.log(`Se encontró el nodo con el valor ${data}`)
+                return current;
+            }
+            current = current.next;
+        }
+        console.log(`No se encontró un nodo con el valor ${data} en la lista`);
+        return null;
+    }
+
+    delete(data) {
+        // Si la lista está vacía no hay nada que eliminar
+        if(!this.head) {
+            return `Lista vacía, no hay nada que eliminar`;
+        }
+
+        // Si el valor que buscamos eliminar está en el head
+        if(this.head === data) {
+            this.head = this.head.next; // Le asignamos al head el valor del 'siguiente' nodo 
+            // lo que hace que el primer nodo pierda su valor o sea null si es que no hay mas nodos
+            return;
+        }
+
+        let current = this.head;
+        let previous = null;
+
+        while (current && current.data !== data) {
+            previous = current;
+            current = current.next;
+        }
+
+        if(current) {
+            previous.next = current.next;
+        }
+
+
+    }
+
 }
 
 const myList = new LinkedList();
 myList.append(1);
-myList.append(2);
-myList.append(3);
+myList.append(5);
+myList.append(10);
+myList.append(20);
 
+
+// myList.find(5);
 myList.display(); // Cuando se llama al método display() se imprime en consola los valores de la lista
+console.log('-----------')
+myList.delete(5);
+myList.display();
+// myList.size();
